@@ -1,8 +1,17 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
+import { loginAction } from '../redux/actions/authActions';
+
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loginAction());
+  }, [dispatch]);
   return (
     <div>
       <Head>
