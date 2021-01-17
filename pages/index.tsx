@@ -1,14 +1,18 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { loginAction } from '../redux/actions/authActions';
+import { isLoggedInSelector } from '../redux/selectors/auth';
 
 const Home = () => {
   const dispatch = useDispatch();
 
+  const isLoggedIn = useSelector(isLoggedInSelector);
+
+  console.log(isLoggedIn);
   useEffect(() => {
     dispatch(loginAction());
   }, [dispatch]);
@@ -22,6 +26,8 @@ const Home = () => {
         <Link href="/sample">Sample link</Link>
         <SampleText>Sample text</SampleText>
       </main>
+
+      <p>You are authorized person: {isLoggedIn ? 'true' : 'false'}</p>
     </div>
   );
 };
