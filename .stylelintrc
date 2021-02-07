@@ -5,12 +5,8 @@
     "stylelint-config-styled-components"
   ],
   "rules": {
-    "comment-empty-line-before": null,
-    "declaration-colon-space-before": null,
-    "declaration-empty-line-before": null,
-    "number-leading-zero": null,
-    "declaration-colon-newline-after": null,
-    "length-zero-no-unit": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "value-keyword-case": null,
+    "font-family-no-missing-generic-family-keyword": null,
   }
 }

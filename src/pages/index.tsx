@@ -12,7 +12,6 @@ const Home = () => {
 
   const isLoggedIn = useSelector(isLoggedInSelector);
 
-  console.log(isLoggedIn);
   useEffect(() => {
     dispatch(loginAction());
   }, [dispatch]);
