@@ -9,7 +9,14 @@ import BaseDocument, {
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
+import { enumerableDecorator } from 'helpers/helper';
+
 class Document extends BaseDocument {
+  @enumerableDecorator
+  static sampleMethod(test: any) {
+    console.log(test);
+  }
+
   public static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
